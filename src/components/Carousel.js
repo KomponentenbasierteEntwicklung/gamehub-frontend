@@ -1,6 +1,7 @@
 import React from 'react'
-import { data } from './mockData'
+import { data } from '../data/mockCarouselData'
 import Carousel from 'react-elastic-carousel'
+import GameSection from './GameSection'
 
 const breakPoints = [
     { width: 1, itemsToShow: 1 },

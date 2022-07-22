@@ -6,7 +6,7 @@ function Cart({ showCart, setShowCart }) {
             <div>
                 {showCart && (
                     <div
-                        className="w-full h-full bg-black bg-opacity-70 top-0 overflow-y-auto overflow-x-hidden fixed sticky-0 w-screen z-20 "
+                        className="h-full bg-black bg-opacity-70 top-0 overflow-y-auto overflow-x-hidden fixed sticky-0 w-screen z-20 "
                         id="chec-div"
                     >
                         <div
@@ -191,7 +191,7 @@ function Cart({ showCart, setShowCart }) {
                                     </div>
                                 </div>
                                 <div
-                                    className="xl:w-1/2 md:w-1/3 xl:w-1/4 w-full bg-gray-100 h-full"
+                                    className="xl:w-1/2 md:w-1/3 w-full bg-gray-100 h-full"
                                     id="summary"
                                 >
                                     <div className="flex flex-col md:h-screen px-14 py-20 justify-between overflow-y-auto">
@@ -233,10 +233,7 @@ function Cart({ showCart, setShowCart }) {
                                                     $10,240
                                                 </p>
                                             </div>
-                                            <button
-                                                // onClick={() => setShow(!show)}
-                                                className="text-base leading-none w-full py-5 bg-gray-800 border-gray-800 border focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 text-white"
-                                            >
+                                            <button className="text-base leading-none w-full py-5 bg-gray-800 border-gray-800 border focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 text-white">
                                                 Checkout
                                             </button>
                                         </div>
@@ -244,7 +241,6 @@ function Cart({ showCart, setShowCart }) {
                                 </div>
                             </div>
                         </div>
-                        {/* bhalo  */}
                     </div>
                 )}
             </div>

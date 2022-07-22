@@ -1,22 +1,35 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
-import Login from './components/Login'
-import Homepage from './components/Homepage'
-import Cart from './components/Cart'
-import Games from './components/Games'
+import Login from './pages/Login'
+import Homepage from './pages/Homepage'
+import Games from './pages/Games'
+import GameDetail from './pages/GameDetail'
+import PageNotFound from './pages/PageNotFound'
+
+import { Currency } from './helper/Currency'
+
+export const CurrencyContext = React.createContext({})
 
 function App() {
+    const [currency, setCurrency] = useState(Currency[0])
+
     return (
         <div>
-            <Router>
-                <Routes>
-                    <Route path="/" element={<Login />}></Route>
-                    <Route path="/home" element={<Homepage />}></Route>
-                    <Route path="/cart" element={<Cart show />}></Route>
-                    <Route path="/games/" element={<Games />}></Route>
-                </Routes>
-            </Router>
+            <CurrencyContext.Provider value={{ currency, setCurrency }}>
+                <Router>
+                    <Routes>
+                        <Route path="/" element={<Login />}></Route>
+                        <Route path="/home" element={<Homepage />}></Route>
+                        <Route path="/games" element={<Games />}></Route>
+                        <Route
+                            path="/games/:id"
+                            element={<GameDetail />}
+                        ></Route>
+                        <Route path="*" element={<PageNotFound />}></Route>
+                    </Routes>
+                </Router>
+            </CurrencyContext.Provider>
         </div>
     )
 }
