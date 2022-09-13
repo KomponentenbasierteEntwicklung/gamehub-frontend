@@ -8,9 +8,6 @@ const Banner = () => {
                 <h3>Best Game Store</h3>
                 <h1>Gamehub</h1>
                 <div>
-                    {/* <Link href={`/product/${heroBanner.product}`}>
-            <button type="button">{heroBanner.buttonText}</button>
-          </Link> */}
                     <div className="desc">
                         <h5>Discounted Games all year</h5>
                         <p>Find your wanted game cheap at Gamerhub!</p>

@@ -5,6 +5,9 @@ module.exports = {
             fontFamily: {
                 metrophobic: ['Metrophobic'],
             },
+            color: {
+                primary: '#a4508b',
+            },
         },
     },
     plugins: [
