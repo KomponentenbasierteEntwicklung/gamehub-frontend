@@ -1,8 +1,9 @@
 import { LockClosedIcon } from '@heroicons/react/solid'
 import companyLogo from '../video-games.png'
 import '../App.css'
+import { withKeycloak } from 'react-keycloak'
 
-export default function Login() {
+function Login({ keycloak, keycloakInitialized }) {
     return (
         <>
             <div className="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 background-clr">
@@ -75,7 +76,7 @@ export default function Login() {
 
                             <div className="text-sm">
                                 <a
-                                    href="#"
+                                    href="/forgot-password"
                                     className="font-medium text-indigo-600 hover:text-indigo-500"
                                 >
                                     Forgot your password?
@@ -85,7 +86,13 @@ export default function Login() {
 
                         <div>
                             <button
-                                type="submit"
+                                type="button"
+                                onClick={() =>
+                                    keycloak.login({
+                                        redirectUri:
+                                            'http://localhost:3000/home',
+                                    })
+                                }
                                 className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                             >
                                 <span className="absolute left-0 inset-y-0 flex items-center pl-3">
@@ -103,3 +110,5 @@ export default function Login() {
         </>
     )
 }
+
+export default withKeycloak(Login)

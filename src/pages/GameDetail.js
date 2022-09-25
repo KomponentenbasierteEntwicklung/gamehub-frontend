@@ -5,28 +5,34 @@ import Footer from '../components/Footer'
 import NavBar from '../components/NavBar'
 import Cart from '../components/Cart'
 import { useState, useEffect } from 'react'
-import { gameData } from '../data/gameData'
 import DetailInformationBox from '../components/DetailInformationBox'
-import { dlcData } from '../data/dlcData'
 import GameCard from '../components/GameCard'
+import axios from 'axios'
+import { formatArrayDateToString } from '../util/util'
+import AddToCart from '../components/AddToCart'
 
-export default function Games() {
+export default function GameDetail() {
     const { id } = useParams()
     const [showCart, setShowCart] = useState(false)
-    const [loading, setLoading] = useState(false)
     const [game, setGame] = useState({ name: 'loading...' })
     const [dlcs, setDlcs] = useState([])
 
     useEffect(() => {
-        setLoading(true)
-        const game = gameData.find((game) => game.appid == id)
-        const toDisplayDLCs = dlcData.filter(
-            (dlc) => dlc.OriginalGame == game.name
-        )
-        setDlcs(toDisplayDLCs)
-        setGame(game)
-        setLoading(false)
-    }, [loading])
+        axios.get('http://localhost:8080/api/v1/games').then((response) => {
+            console.log(response.data)
+            const numberId = Number(id)
+            const game = response.data.find((game) => game.id === numberId)
+            console.log(game)
+            axios.get('http://localhost:8080/api/v1/dlcs').then((response) => {
+                console.log(response.data)
+                const toDisplayDLCs = response.data.filter(
+                    (dlc) => dlc.originalGame === game.name
+                )
+                setDlcs(toDisplayDLCs)
+            })
+            setGame(game)
+        })
+    }, [])
 
     return (
         <div>
@@ -40,18 +46,25 @@ export default function Games() {
                         <div className="flex space-x-6 my-6 ">
                             <div className="basis-6/12">
                                 <img
-                                    src={game.header_image}
+                                    src={game.imageUrl}
                                     className="w-full"
+                                    alt="header"
                                 ></img>
                             </div>
                             <div className="basis-6/12">
-                                <DetailInformationBox
-                                    heading={'Release date'}
-                                    value={game.release_date || ''}
-                                />
+                                {game.releaseDate && (
+                                    <DetailInformationBox
+                                        heading={'Release date'}
+                                        value={
+                                            formatArrayDateToString(
+                                                game.releaseDate
+                                            ) || 'unknown'
+                                        }
+                                    />
+                                )}
                                 <DetailInformationBox
                                     heading={'English'}
-                                    value={game.english ? 'true' : 'false'}
+                                    value={'true'}
                                 />
                                 <DetailInformationBox
                                     heading={'Publisher'}
@@ -59,26 +72,35 @@ export default function Games() {
                                 />
                                 <DetailInformationBox
                                     heading={'Required Age'}
-                                    value={game.required_age}
+                                    value={game.requiredAge?.toString()}
                                 />
-
                                 {game.genres && (
                                     <div className="box w-full  rounded-sm mt-1 flex justify-start align-middle">
                                         <h4 className="text-gray-400 text-lg mr-2">
                                             Genres:&nbsp;
                                         </h4>
-                                        <div className="box bg-indigo-600 px-2 py-1 rounded-lg">
-                                            <button>{game.genres}</button>
-                                        </div>
+                                        {game.genres.split(';').map((genre) => {
+                                            return (
+                                                <div className="box bg-indigo-600 px-2 py-1 rounded-lg mr-2">
+                                                    <button>{genre}</button>
+                                                </div>
+                                            )
+                                        })}
                                     </div>
                                 )}
+                                <div className="mt-10">
+                                    <AddToCart
+                                        price={game.price}
+                                        name={game.name}
+                                    />
+                                </div>
                             </div>
                         </div>
                     </section>
                     <section id="description">
                         <h1 className="text-section-header">About the game</h1>
                         <p className="text-md text-gray-300">
-                            {game.about_the_game}
+                            {game.aboutTheGame}
                         </p>
                     </section>
                     <section id="DLCs">
@@ -87,9 +109,11 @@ export default function Games() {
                             {dlcs &&
                                 dlcs.map((dlc) => (
                                     <GameCard
+                                        isDlc={true}
+                                        gameId={dlc.id}
                                         gameName={dlc.name}
-                                        price={dlc.Price}
-                                        imgSrc={dlc.header_image}
+                                        price={dlc.price}
+                                        imgSrc={dlc.headerImage}
                                     />
                                 ))}
                         </div>
