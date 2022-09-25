@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import '../App.css'
 import NavBar from '../components/NavBar'
@@ -8,12 +8,14 @@ import { FormControl, MenuItem } from '@mui/material'
 import Select from '@mui/material/Select'
 import GameSection from '../components/GameSection'
 import Pagination from '../components/Pagination'
+import axios from 'axios'
 
 export default function Games() {
     const [showCart, setShowCart] = useState(false)
     const [sortBy, setSortBy] = useState('Best Match')
+    const [games, setGames] = useState([])
 
-    const handleChange = (event) => {
+    const handleChange = event => {
         setSortBy(event.target.value)
     }
 
@@ -24,6 +26,11 @@ export default function Games() {
         { name: 'Singleplayer', href: '#' },
     ]
 
+    useEffect(() => {
+        axios.get(`http://localhost:8080/api/v1/games/`).then(response => {
+            setGames(response?.data)
+        })
+    }, [])
     return (
         <>
             <Cart showCart={showCart} setShowCart={setShowCart} />
@@ -83,7 +90,7 @@ export default function Games() {
                                                 Categories
                                             </div>
                                             <div className="flex flex-col space-y-2">
-                                                {categories.map((category) => (
+                                                {categories.map(category => (
                                                     <div className="flex justify-between">
                                                         <a
                                                             className="text-sm text-slate-300 hover:underline hover:cursor-pointer"
@@ -122,7 +129,11 @@ export default function Games() {
                                 </div>
                             </div>
                             <div id="games list" className="pl-10">
-                                <GameSection limit={10} gridCol={2} />
+                                <GameSection
+                                    limit={10}
+                                    gridCol={2}
+                                    gameData={games}
+                                />
                                 <div id="pagination">
                                     <Pagination
                                         count={10}

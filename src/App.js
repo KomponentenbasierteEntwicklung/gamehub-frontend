@@ -5,9 +5,12 @@ import Login from './pages/Login'
 import Homepage from './pages/Homepage'
 import Games from './pages/Games'
 import GameDetail from './pages/GameDetail'
+import DlcDetail from './pages/DlcDetail'
+
 import PageNotFound from './pages/PageNotFound'
 
 import { Currency } from './helper/Currency'
+import KeycloakPage from './pages/KeycloakPage'
 
 export const CurrencyContext = React.createContext({})
 
@@ -25,6 +28,11 @@ function App() {
                         <Route
                             path="/games/:id"
                             element={<GameDetail />}
+                        ></Route>
+                        <Route path="/dlcs/:id" element={<DlcDetail />}></Route>
+                        <Route
+                            path="/keycloak"
+                            element={<KeycloakPage />}
                         ></Route>
                         <Route path="*" element={<PageNotFound />}></Route>
                     </Routes>

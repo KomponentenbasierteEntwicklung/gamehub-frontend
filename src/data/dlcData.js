@@ -5,9 +5,9 @@ export const dlcData = [
             'https://cdn.cloudflare.steamstatic.com/steam/apps/1490530/header.jpg?t=1632294093',
         OriginalGame: 'Counter-Strike',
         Description:
-            'about the game a long description of the game about the game a long description of the game about the game a long description of the game about the game a long description of the game about the game a long description of the game about the game a long description of the game about the game a long description of the game about the game a long description of the game about the game a long description of the gameabout the game a long description of the gameabout the game a long description of the gameabout the game a long description of the gameabout the game a long description of the gameabout the game a long description of the game',
+            'about the game a long description of the game about the game a long description of the game about the game',
         Price: 3.3,
-        release_date: '3-3-2020',
+        release_date: '2020-03-03',
     },
     {
         name: 'Counter-Strike DLC',
@@ -15,9 +15,9 @@ export const dlcData = [
             'https://cdn.cloudflare.steamstatic.com/steam/apps/1490530/header.jpg?t=1632294093',
         OriginalGame: 'Team Fortress Classic',
         Description:
-            'about the game a long description of the game about the game a long description of the game about the game a long description of the game about the game a long description of the game about the game a long description of the game about the game a long description of the game about the game a long description of the game about the game a long description of the game about the game a long description of the gameabout the game a long description of the gameabout the game a long description of the gameabout the game a long description of the gameabout the game a long description of the gameabout the game a long description of the game',
+            'about the game a long description of the game about the game a long description of the game about the game',
         Price: 3.3,
-        release_date: '3-3-2020',
+        release_date: '2020-03-03',
     },
     {
         name: 'Counter-Strike DLC',
@@ -25,9 +25,9 @@ export const dlcData = [
             'https://cdn.cloudflare.steamstatic.com/steam/apps/1490530/header.jpg?t=1632294093',
         OriginalGame: 'Day of Defeat',
         Description:
-            'about the game a long description of the game about the game a long description of the game about the game a long description of the game about the game a long description of the game about the game a long description of the game about the game a long description of the game about the game a long description of the game about the game a long description of the game about the game a long description of the gameabout the game a long description of the gameabout the game a long description of the gameabout the game a long description of the gameabout the game a long description of the gameabout the game a long description of the game',
+            'about the game a long description of the game about the game a long description of the game about the game',
         Price: 3.3,
-        release_date: '3-3-2020',
+        release_date: '2020-03-03',
     },
     {
         name: 'Counter-Strike DLC',
@@ -35,9 +35,9 @@ export const dlcData = [
             'https://cdn.cloudflare.steamstatic.com/steam/apps/1490530/header.jpg?t=1632294093',
         OriginalGame: 'Deathmatch Classic',
         Description:
-            'about the game a long description of the game about the game a long description of the game about the game a long description of the game about the game a long description of the game about the game a long description of the game about the game a long description of the game about the game a long description of the game about the game a long description of the game about the game a long description of the gameabout the game a long description of the gameabout the game a long description of the gameabout the game a long description of the gameabout the game a long description of the gameabout the game a long description of the game',
+            'about the game a long description of the game about the game a long description of the game about the game',
         Price: 3.3,
-        release_date: '3-3-2020',
+        release_date: '2020-03-03',
     },
     {
         name: 'Counter-Strike DLC 2',
@@ -45,9 +45,9 @@ export const dlcData = [
             'https://cdn.cloudflare.steamstatic.com/steam/apps/1490530/header.jpg?t=1632294093',
         OriginalGame: 'Counter-Strike',
         Description:
-            'about the game a long description of the game about the game a long description of the game about the game a long description of the game about the game a long description of the game about the game a long description of the game about the game a long description of the game about the game a long description of the game about the game a long description of the game about the game a long description of the gameabout the game a long description of the gameabout the game a long description of the gameabout the game a long description of the gameabout the game a long description of the gameabout the game a long description of the game',
+            'about the game a long description of the game about the game a long description of the game about the game',
         Price: 3.3,
-        release_date: '3-3-2020',
+        release_date: '2020-03-03',
     },
     {
         name: 'Broken Fang',
@@ -55,9 +55,9 @@ export const dlcData = [
             'https://cdn.cloudflare.steamstatic.com/steam/apps/1490530/header.jpg?t=1632294093',
         OriginalGame: 'Counter-Strike',
         Description:
-            'about the game a long description of the game about the game a long description of the game about the game a long description of the game about the game a long description of the game about the game a long description of the game about the game a long description of the game about the game a long description of the game about the game a long description of the game about the game a long description of the gameabout the game a long description of the gameabout the game a long description of the gameabout the game a long description of the gameabout the game a long description of the gameabout the game a long description of the game',
+            'about the game a long description of the game about the game a long description of the game about the game',
         Price: 3.3,
-        release_date: '3-3-2020',
+        release_date: '2020-03-03',
     },
     {
         name: 'Broken Fang',
@@ -65,8 +65,8 @@ export const dlcData = [
             'https://cdn.cloudflare.steamstatic.com/steam/apps/1490530/header.jpg?t=1632294093',
         OriginalGame: 'Counter-Strike',
         Description:
-            'about the game a long description of the game about the game a long description of the game about the game a long description of the game about the game a long description of the game about the game a long description of the game about the game a long description of the game about the game a long description of the game about the game a long description of the game about the game a long description of the gameabout the game a long description of the gameabout the game a long description of the gameabout the game a long description of the gameabout the game a long description of the gameabout the game a long description of the game',
+            'about the game a long description of the game about the game a long description of the game about the game',
         Price: 3.3,
-        release_date: '3-3-2020',
+        release_date: '2020-03-03',
     },
 ]

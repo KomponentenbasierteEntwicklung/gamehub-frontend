@@ -1,7 +1,6 @@
 import React from 'react'
 import { data } from '../data/mockCarouselData'
-import Carousel from 'react-elastic-carousel'
-import GameSection from './GameSection'
+// import Carousel from 'react-elastic-carousel'
 
 const breakPoints = [
     { width: 1, itemsToShow: 1 },
@@ -10,10 +9,10 @@ const breakPoints = [
     { width: 1200, itemsToShow: 4 },
 ]
 
-function App() {
+export default function CustomCarousel() {
     return (
         <div>
-            <Carousel breakPoints={breakPoints} className="mb-5">
+            {/* <Carousel breakPoints={breakPoints} className="mb-5">
                 {data.map((item) => (
                     <img
                         className="w-[220px] inline-block p-2 cursor-pointer hover:scale-105 ease-in-out duration-300"
@@ -21,9 +20,7 @@ function App() {
                         alt="/"
                     />
                 ))}
-            </Carousel>
+            </Carousel> */}
         </div>
     )
 }
-
-export default App

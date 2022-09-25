@@ -4,7 +4,9 @@ export default function DetailInformationBox({ heading, value }) {
             {value && (
                 <>
                     <h4 className="text-gray-400 text-lg">{heading}:&nbsp;</h4>
-                    <p className="text-gray-300 text-lg">{value}</p>
+                    <p className="text-gray-300 text-lg">
+                        {value.replace(';', ', ')}
+                    </p>
                 </>
             )}
         </div>
