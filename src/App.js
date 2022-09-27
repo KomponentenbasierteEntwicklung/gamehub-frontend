@@ -12,10 +12,16 @@ import PageNotFound from './pages/PageNotFound'
 import { Currency } from './helper/Currency'
 import KeycloakPage from './pages/KeycloakPage'
 
-export const CurrencyContext = React.createContext({})
+export const CurrencyContext = React.createContext({
+    multiplier: 1,
+    currency: Currency.EURO,
+})
 
 function App() {
-    const [currency, setCurrency] = useState(Currency[0])
+    const [currency, setCurrency] = useState({
+        multiplier: 1,
+        currency: Currency.EURO,
+    })
 
     return (
         <div>

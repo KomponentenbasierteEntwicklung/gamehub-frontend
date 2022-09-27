@@ -2,7 +2,7 @@ import { React } from 'react'
 import GameCard from './GameCard'
 const GameSection = ({ sectionTitle, limit, gridCol, gameData }) => {
     return (
-        <div className="lg:my-12 sm:my-8 ">
+        <div className="lg:my-12 sm:my-8 " data-cy="game_section">
             {sectionTitle && (
                 <div className="2xl:container 2xl:mx-auto">
                     <div className="lg:px-20 md:px-6 px-4 md:py-8">
@@ -22,6 +22,7 @@ const GameSection = ({ sectionTitle, limit, gridCol, gameData }) => {
                             .slice(0, limit || 6)
                             .map((game) => (
                                 <GameCard
+                                    key={game.name}
                                     gameName={game.name}
                                     price={game.price}
                                     imgSrc={game.imageUrl}

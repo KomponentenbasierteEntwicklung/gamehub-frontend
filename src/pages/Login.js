@@ -87,13 +87,22 @@ function Login({ keycloak, keycloakInitialized }) {
                         <div>
                             <button
                                 type="button"
+                                className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                            >
+                                <span className="absolute left-0 inset-y-0 flex items-center pl-3"></span>
+                                Sign in
+                            </button>
+                            <h1 className="text-center my-4">OR</h1>
+                            <button
+                                type="button"
+                                data-cy="login_with_keycloak"
                                 onClick={() =>
                                     keycloak.login({
                                         redirectUri:
                                             'http://localhost:3000/home',
                                     })
                                 }
-                                className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                                className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-gray-600 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                             >
                                 <span className="absolute left-0 inset-y-0 flex items-center pl-3">
                                     <LockClosedIcon
@@ -101,7 +110,7 @@ function Login({ keycloak, keycloakInitialized }) {
                                         aria-hidden="true"
                                     />
                                 </span>
-                                Sign in
+                                Sign in with keycloak
                             </button>
                         </div>
                     </form>

@@ -19,12 +19,9 @@ export default function GameDetail() {
 
     useEffect(() => {
         axios.get('http://localhost:8080/api/v1/games').then((response) => {
-            console.log(response.data)
             const numberId = Number(id)
             const game = response.data.find((game) => game.id === numberId)
-            console.log(game)
             axios.get('http://localhost:8080/api/v1/dlcs').then((response) => {
-                console.log(response.data)
                 const toDisplayDLCs = response.data.filter(
                     (dlc) => dlc.originalGame === game.name
                 )
@@ -81,7 +78,10 @@ export default function GameDetail() {
                                         </h4>
                                         {game.genres.split(';').map((genre) => {
                                             return (
-                                                <div className="box bg-indigo-600 px-2 py-1 rounded-lg mr-2">
+                                                <div
+                                                    className="box bg-indigo-600 px-2 py-1 rounded-lg mr-2"
+                                                    key={genre}
+                                                >
                                                     <button>{genre}</button>
                                                 </div>
                                             )
@@ -109,6 +109,7 @@ export default function GameDetail() {
                             {dlcs &&
                                 dlcs.map((dlc) => (
                                     <GameCard
+                                        key={dlc.name}
                                         isDlc={true}
                                         gameId={dlc.id}
                                         gameName={dlc.name}

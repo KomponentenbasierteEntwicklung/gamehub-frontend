@@ -11,6 +11,7 @@
         "@tailwindcss/forms": "^0.5.2",
         "axios": "^0.27.2",
         "classnames": "^2.3.1",
+        "cypress": "^10.8.0",
         "keycloak-js": "8.0.1",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
@@ -26,7 +27,9 @@
         "start": "react-scripts start",
         "build": "react-scripts build",
         "test": "react-scripts test",
-        "eject": "react-scripts eject"
+        "eject": "react-scripts eject",
+        "cypress:open": "cypress open"
+
     },
     "eslintConfig": {
         "extends": [

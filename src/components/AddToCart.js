@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useContext } from 'react'
 import { CurrencyContext } from '../App'
 
@@ -13,8 +13,8 @@ export default function AddToCart({ price, name }) {
                 </h2>
                 <div className="flex items-center space-x-2 px-2 py-1 absolute right-2 -bottom-8 rounded-lg w-[16rem] shadow-lg bg-[#262424] ">
                     <div className="p-3 text-lg font-semibold">
-                        {price}
-                        {currency.symbol}
+                        {Math.round(price * currency.multiplier * 10) / 10}
+                        {currency.currency.symbol}
                     </div>
                     <button className="bg-gradient-to-r from-[#5f0a87] via-[#a4508b] to-[#a4508b] px-3 py-2 rounded-md text-lg w-[18rem] hover:scale-105 transition-all">
                         Add to cart
