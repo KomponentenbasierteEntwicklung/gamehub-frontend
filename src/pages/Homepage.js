@@ -36,7 +36,6 @@ export default function Homepage() {
                 <GameSection
                     sectionTitle={'Action'}
                     gridCol={3}
-                    limit={6}
                     gameData={gamesToLoad}
                 />
             </div>

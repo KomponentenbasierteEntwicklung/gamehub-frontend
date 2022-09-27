@@ -32,17 +32,17 @@ export default function Games() {
         })
     }, [])
     return (
-        <>
+        <div>
             <Cart showCart={showCart} setShowCart={setShowCart} />
             <NavBar showCart={showCart} setShowCart={setShowCart} />
-            <body className="mt-16 mx-28 p-8 ">
+            <div className="mt-16 mx-28 p-8 ">
                 <div id="divider" className="custom-divider">
                     <header id="games-header" className="text-lg text-white ">
                         <div className="flex justify-between py-4">
                             <div>
                                 <div className="text-4xl font-bold">Games</div>
                                 <p className="text-xs text-slate-400">
-                                    9999 Products
+                                    {games.length} Products
                                 </p>
                             </div>
                             <div className="flex space-x-4 items-center rounded">
@@ -91,7 +91,10 @@ export default function Games() {
                                             </div>
                                             <div className="flex flex-col space-y-2">
                                                 {categories.map(category => (
-                                                    <div className="flex justify-between">
+                                                    <div
+                                                        key={category.name}
+                                                        className="flex justify-between"
+                                                    >
                                                         <a
                                                             className="text-sm text-slate-300 hover:underline hover:cursor-pointer"
                                                             href={category.href}
@@ -150,7 +153,7 @@ export default function Games() {
                     </div>
                 </div>
                 <Footer />
-            </body>
-        </>
+            </div>
+        </div>
     )
 }

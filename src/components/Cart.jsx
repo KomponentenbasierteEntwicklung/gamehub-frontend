@@ -24,6 +24,7 @@ function Cart({ showCart, setShowCart }) {
                                     <div
                                         className="flex items-center text-gray-500 hover:text-gray-600 cursor-pointer"
                                         onClick={() => setShowCart(!showCart)}
+                                        data-cy="close_cart"
                                     >
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg"
